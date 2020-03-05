@@ -210,3 +210,6 @@ set wildignorecase
 let g:terraform_fmt_on_save=1
 " Go from: https://github.com/fatih/vim-go
 let g:go_fmt_autosave=1
+
+" vim custom commands
+cmap w!! %!sudo tee > /dev/null
