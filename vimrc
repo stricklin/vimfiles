@@ -67,8 +67,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Asynchronous task dispatcher
 Plug 'tpope/vim-dispatch'
 
-" ALE linter
-Plug 'dense-analysis/ale'
+" Blacked auto formatter
+Plug 'psf/black'
 
 call plug#end()
 
