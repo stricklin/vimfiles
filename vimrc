@@ -42,12 +42,6 @@ Plug 'scrooloose/nerdtree'
 " NERD tree Git plugin
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Atom One Dark colourscheme
-Plug 'joshdick/onedark.vim'
-
-"backup vim color schemes from old vimfiles
-"Plug 'flazz/vim-colorschemes'
-
 " distraction-free writing
 Plug 'junegunn/goyo.vim'
 
@@ -69,6 +63,12 @@ Plug 'tpope/vim-dispatch'
 
 " Blacked auto formatter
 Plug 'psf/black'
+
+" ALE linter
+Plug 'dense-analysis/ale'
+
+" isort import sorter
+Plug 'fisadev/vim-isort'
 
 call plug#end()
 
@@ -212,9 +212,10 @@ let g:terraform_fmt_on_save=1
 let g:go_fmt_autosave=1
 
 " Python formatting
-let b:ale_fixers = {'python': ['isort', 'black']}
+let g:ale_fixers = {'python': ['isort', 'black']}
 let g:ale_fix_on_save = 1
-let b:ale_python_black_options = '--line-length=99'
+let g:ale_python_black_options = '--line-length=99'
+autocmd BufWritePost *.py call flake8#Flake8()
 
 " vim custom commands
 cmap w!! %!sudo tee > /dev/null
