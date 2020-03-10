@@ -211,5 +211,10 @@ let g:terraform_fmt_on_save=1
 " Go from: https://github.com/fatih/vim-go
 let g:go_fmt_autosave=1
 
+" Python formatting
+let b:ale_fixers = {'python': ['isort', 'black']}
+let g:ale_fix_on_save = 1
+let b:ale_python_black_options = '--line-length=99'
+
 " vim custom commands
 cmap w!! %!sudo tee > /dev/null
