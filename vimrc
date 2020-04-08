@@ -36,8 +36,8 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 " Golang
 Plug 'fatih/vim-go'
 
-" The NERD tree
-Plug 'scrooloose/nerdtree'
+" nerdtree a file tree browser for vim
+Plug 'preservim/nerdtree'
 
 " NERD tree Git plugin
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -71,6 +71,13 @@ Plug 'dense-analysis/ale'
 Plug 'fisadev/vim-isort'
 
 call plug#end()
+
+" Set ctrl-n to open nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+" Make nerdtree open when vim opens a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " Set colorscheme
 colorscheme elflord
