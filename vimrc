@@ -12,52 +12,6 @@ call plug#begin('~/.vim/plugged')
 " Auto Pairs
 Plug 'jiangmiao/auto-pairs'
 
-" GitGutter
-Plug 'airblade/vim-gitgutter'
-
-" Fugitive
-Plug 'tpope/vim-fugitive'
-
-" Make Fugitive use Github
-Plug 'tpope/vim-rhubarb'
-
-" Vim Polyglot - language support
-Plug 'sheerun/vim-polyglot'
-
-" Terraform
-Plug 'hashivim/vim-terraform'
-
-" Ansible
-Plug 'pearofducks/ansible-vim'
-
-" Jinja2
-Plug 'Glench/Vim-Jinja2-Syntax'
-
-" Golang
-Plug 'fatih/vim-go'
-
-" nerdtree a file tree browser for vim
-Plug 'preservim/nerdtree'
-
-" NERD tree Git plugin
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" distraction-free writing
-Plug 'junegunn/goyo.vim'
-
-" presentation mode
-Plug 'sotte/presenting.vim'
-
-"Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Vim-indent-guides
-Plug 'nathanaelkane/vim-indent-guides'
-
-" Ctrl-P Atom-like fuzzy file search
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Asynchronous task dispatcher
 Plug 'tpope/vim-dispatch'
 
@@ -71,13 +25,6 @@ Plug 'dense-analysis/ale'
 Plug 'fisadev/vim-isort'
 
 call plug#end()
-
-" Set ctrl-n to open nerdtree
-map <C-n> :NERDTreeToggle<CR>
-
-" Make nerdtree open when vim opens a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " Set colorscheme
 colorscheme elflord
